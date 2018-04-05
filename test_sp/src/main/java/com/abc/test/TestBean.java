@@ -1,4 +1,4 @@
-package com.abc;
+package com.abc.test;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -47,17 +47,17 @@ public class TestBean {
         ResourceLoader rl;
 
         public String getUsername() {
-            /*Properties p = new Properties();
+            Properties p = new Properties();
             try {
                 System.out.println(System.getProperty("java.class.path"));
-                Resource rc = rl.getResource("file:test.properties");
-
-//                InputStream in = ClassLoader.getSystemResourceAsStream("test.properties");
-                if (rc.getInputStream() == null) throw new IllegalArgumentException();
-                p.load(rc.getInputStream());
+//                Resource rc = rl.getResource("file:test.properties");
+//                InputStream in = rc.getInputStream();
+                InputStream in = ClassLoader.getSystemResourceAsStream("test.properties");
+                if ( in == null) throw new IllegalArgumentException();
+                p.load(in);
             } catch (IOException e) {
                 e.printStackTrace();
-            }*/
+            }
             return env.getProperty("testdata");
         }
     }

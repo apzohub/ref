@@ -23,10 +23,10 @@ public class ApplicationTest {
     private MockMvc mvc;
 
     @Test
-    public void getHello() throws Exception {
+    public void getData() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("Test Boot! - test me")));
+                .andExpect(content().json("[{},{}]"));
     }
 }
 

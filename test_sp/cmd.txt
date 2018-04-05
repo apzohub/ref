@@ -1,0 +1,1 @@
+java -jar bootapp-1.0-SNAPSHOT.jar  --spring.config.location=file:/home/dev/application.properties,file:/home/dev/test.properties,file:/home/dev/test.properties --logging.config=file:/home/dev/logback.xml
